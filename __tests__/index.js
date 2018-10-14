@@ -1,40 +1,17 @@
-import { onCreateWebpackConfig } from '../src/gatsby-node'
-import getConfig from '../__mocks__/webpack-config'
-import rules from '../__mocks__/rules'
-import loaders from '../__mocks__/loaders'
+const { onCreateWebpackConfig } = require('../gatsby-node')
+const getConfig = require('../__mocks__/get-config')
+const rules = require('../__mocks__/rules')
 
-const postcssPluginsSerializer = {
-  test: val => typeof val === 'function' && val.name === 'postcssPlugins',
-  print: val => val.toString(),
-}
-
-expect.addSnapshotSerializer(postcssPluginsSerializer)
-
-it('adds astroturf/loader and rule for generated CSS Modules', () => {
+it('appends astroturf/loader to the JS rule', () => {
   const actions = { replaceWebpackConfig: jest.fn() }
-  onCreateWebpackConfig({ actions, getConfig, rules, loaders })
+  onCreateWebpackConfig({ actions, getConfig, rules })
   expect(actions.replaceWebpackConfig).toMatchSnapshot()
 })
 
-it('passes PostCSS plugins to the CSS rule', () => {
+it('passes options to astroturf/loader', () => {
   const actions = { replaceWebpackConfig: jest.fn() }
   onCreateWebpackConfig(
-    { actions, getConfig, rules, loaders },
-    {
-      postcssPlugins: () => [
-        require('postcss-import'),
-        require('postcss-nested'),
-        require('autoprefixer'),
-      ],
-    }
-  )
-  expect(actions.replaceWebpackConfig).toMatchSnapshot()
-})
-
-it('passes other options to astroturf/loader', () => {
-  const actions = { replaceWebpackConfig: jest.fn() }
-  onCreateWebpackConfig(
-    { actions, getConfig, rules, loaders },
+    { actions, getConfig, rules },
     { tagName: 'css', styledTag: 'styled' }
   )
   expect(actions.replaceWebpackConfig).toMatchSnapshot()
@@ -43,10 +20,10 @@ it('passes other options to astroturf/loader', () => {
 it("can't override CSS extension", () => {
   const actions = { replaceWebpackConfig: jest.fn() }
   onCreateWebpackConfig(
-    { actions, getConfig, rules, loaders },
+    { actions, getConfig, rules },
     { extension: '.wont.work.css' }
   )
-  onCreateWebpackConfig({ actions, getConfig, rules, loaders })
+  onCreateWebpackConfig({ actions, getConfig, rules })
   const [
     [firstConfig],
     [secondConfig],

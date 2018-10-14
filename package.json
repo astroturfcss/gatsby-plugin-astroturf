@@ -11,9 +11,7 @@
     "astroturf"
   ],
   "scripts": {
-    "test": "jest",
-    "build": "babel src --out-dir .",
-    "prepare": "cross-env NODE_ENV=production npm run build"
+    "test": "jest"
   },
   "browserslist": [
     "node 6"
@@ -36,20 +34,11 @@
   },
   "peerDependencies": {
     "astroturf": "*",
-    "gatsby": ">=2"
+    "gatsby": ">=2",
+    "gatsby-plugin-postcss": ">=2"
   },
-  "dependencies": {
-    "postcss-loader": "^3.0.0",
-    "postcss-nested": "^4.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "cross-env": "^5.2.0",
     "eslint": "^5.6.1",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "^3.0.0",

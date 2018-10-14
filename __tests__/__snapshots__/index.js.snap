@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`adds astroturf/loader and rule for generated CSS Modules 1`] = `
+exports[`appends astroturf/loader to the JS rule 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -16,76 +16,8 @@ exports[`adds astroturf/loader and rule for generated CSS Modules 1`] = `
                 Object {
                   "loader": "astroturf/loader",
                   "options": Object {
-                    "extension": ".astroturf.css",
+                    "extension": ".module.css",
                   },
-                },
-              ],
-            },
-            Object {
-              "oneOf": Array [
-                Object {
-                  "test": /\\\\\\.astroturf\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {
-                        "modules": true,
-                      },
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss-astroturf",
-                        "plugins": Array [
-                          [Function],
-                        ],
-                      },
-                    },
-                  ],
-                },
-                Object {
-                  "test": /\\\\\\.module\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {
-                        "modules": true,
-                      },
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss",
-                      },
-                    },
-                  ],
-                },
-                Object {
-                  "test": /\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss",
-                      },
-                    },
-                  ],
                 },
               ],
             },
@@ -103,7 +35,7 @@ exports[`adds astroturf/loader and rule for generated CSS Modules 1`] = `
 }
 `;
 
-exports[`passes PostCSS plugins to the CSS rule 1`] = `
+exports[`passes options to astroturf/loader 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -119,179 +51,10 @@ exports[`passes PostCSS plugins to the CSS rule 1`] = `
                 Object {
                   "loader": "astroturf/loader",
                   "options": Object {
-                    "extension": ".astroturf.css",
-                  },
-                },
-              ],
-            },
-            Object {
-              "oneOf": Array [
-                Object {
-                  "test": /\\\\\\.astroturf\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {
-                        "modules": true,
-                      },
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss-astroturf",
-                        "plugins": () => [require('postcss-import'), require('postcss-nested'), require('autoprefixer')],
-                      },
-                    },
-                  ],
-                },
-                Object {
-                  "test": /\\\\\\.module\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {
-                        "modules": true,
-                      },
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss",
-                      },
-                    },
-                  ],
-                },
-                Object {
-                  "test": /\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss",
-                      },
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      },
-    ],
-  ],
-  "results": Array [
-    Object {
-      "isThrow": false,
-      "value": undefined,
-    },
-  ],
-}
-`;
-
-exports[`passes other options to astroturf/loader 1`] = `
-[MockFunction] {
-  "calls": Array [
-    Array [
-      Object {
-        "module": Object {
-          "rules": Array [
-            Object {
-              "test": /\\\\\\.jsx\\?/,
-              "use": Array [
-                Object {
-                  "loader": "babel-loader",
-                },
-                Object {
-                  "loader": "astroturf/loader",
-                  "options": Object {
-                    "extension": ".astroturf.css",
+                    "extension": ".module.css",
                     "styledTag": "styled",
                     "tagName": "css",
                   },
-                },
-              ],
-            },
-            Object {
-              "oneOf": Array [
-                Object {
-                  "test": /\\\\\\.astroturf\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {
-                        "modules": true,
-                      },
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss-astroturf",
-                        "plugins": Array [
-                          [Function],
-                        ],
-                      },
-                    },
-                  ],
-                },
-                Object {
-                  "test": /\\\\\\.module\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {
-                        "modules": true,
-                      },
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss",
-                      },
-                    },
-                  ],
-                },
-                Object {
-                  "test": /\\\\\\.css\\$/,
-                  "use": Array [
-                    Object {
-                      "loader": "style-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "css-loader",
-                      "options": Object {},
-                    },
-                    Object {
-                      "loader": "postcss-loader",
-                      "options": Object {
-                        "ident": "postcss",
-                      },
-                    },
-                  ],
                 },
               ],
             },

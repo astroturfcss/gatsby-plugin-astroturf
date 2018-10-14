@@ -30,28 +30,36 @@ plugins: [
 ]
 ```
 
-Setting `extension` currently isn't possible because you might pick one which clashes with an existing webpack rule.
+Changing `extension` isn't possible, gatsby-plugin-astroturf hardcodes it to `.module.css` in order to match Gatsby's CSS Modules webpack rule.
 
 ## PostCSS plugins
 
-By default, CSS generated from astroturf is processed with [postcss-nested][]. You can add more [PostCSS plugins][] via `postcssPlugins`:
+For astroturf to work properly you need to add nesting support. For that you can use [postcss-nested][] or another plugin which contains this feature, like [precss][]. You can install these plugins an [many more][PostCSS plugins] using [gatsby-plugin-postcss][]:
 
+```
+yarn add gatsby-plugin-postcss
+```
 ```js
 plugins: [
-  {
-    resolve: 'gatsby-plugin-astroturf',
-    options: {
-      postcssPlugins: [
-        require('postcss-nested'),
-        require('postcss-custom-media'),
-        require('autoprefixer')({ grid: true }),
-      ],
-    },
-  },
+  // the order of these plugins isn't important
+  'gatsby-plugin-postcss',
+  'gatsby-plugin-astroturf',
 ]
 ```
 
-When overriding defaults, don't forget to include postcss-nested or another plugin that adds support for nesting, e.g. [precss][].
+You can specify PostCSS plugins through gatsby-plugin-postcss's `postCssPlugins` option, or by creating a `postcss.config.js` file:
+
+```
+yarn add postcss-nested
+```
+```js
+// postcss.config.js
+module.exports =  {
+  plugins: {
+    'postcss-nested': {},
+  }
+}
+```
 
 Happy styling! :art:
 
@@ -59,4 +67,6 @@ Happy styling! :art:
 [options]: https://github.com/4Catalyzer/astroturf#options
 [PostCSS plugins]: https://www.postcss.parts/
 [postcss-nested]: https://github.com/postcss/postcss-nested
+[precss]: https://jonathantneal.github.io/precss/
+[gatsby-plugin-postcss]: https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-postcss
 [precss]: https://github.com/jonathantneal/precss
