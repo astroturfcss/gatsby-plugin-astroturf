@@ -9,7 +9,11 @@ test("when CSS Modules rule doesn't include postcss-loader", () => {
   onCreateWebpackConfig({
     actions,
     getConfig: getConfigWithoutPostcssLoader,
-    rules,
+    rules: {
+      ...rules,
+      css: rules.cssWithoutPostcss,
+      cssModules: rules.cssModulesWithoutPostcss,
+    },
     loaders,
   })
   expect(actions.replaceWebpackConfig).toMatchSnapshot()

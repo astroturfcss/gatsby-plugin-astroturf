@@ -37,10 +37,17 @@ export const onCreateWebpackConfig = (
   const cssRules = findCssRules({ config })
   const astroturfCssRule = rules.cssModules()
   astroturfCssRule.test = new RegExp(EXTENSION.replace(/\./g, '\\.') + '$')
-  const postcssLoader =
-    astroturfCssRule.use.find(({ loader }) =>
-      loader.includes('postcss-loader')
-    ) || loaders.postcss()
+  let postcssLoader = astroturfCssRule.use.find(({ loader }) =>
+    /\bpostcss-loader\b/.test(loader)
+  )
+  if (postcssLoader == null) {
+    postcssLoader = loaders.postcss()
+    astroturfCssRule.use.push(postcssLoader)
+    const cssLoader = astroturfCssRule.use.find(({ loader }) =>
+      /\bcss-loader\b/.test(loader)
+    )
+    cssLoader.options.importLoaders = 1
+  }
   postcssLoader.options.ident = 'postcss-astroturf'
   postcssLoader.options.plugins = postcssPlugins
 

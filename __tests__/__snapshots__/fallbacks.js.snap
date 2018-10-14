@@ -33,6 +33,7 @@ exports[`when CSS Modules rule doesn't include postcss-loader 1`] = `
                     Object {
                       "loader": "css-loader",
                       "options": Object {
+                        "importLoaders": 1,
                         "modules": true,
                       },
                     },
