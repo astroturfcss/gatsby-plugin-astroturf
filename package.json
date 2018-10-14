@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-astroturf",
   "description": "Gatsby plugin for styling with astroturf",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Matija Marohnić <matija.marohnic@gmail.com>",
   "license": "MIT",
   "main": "index.js",
