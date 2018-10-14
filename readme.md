@@ -1,4 +1,4 @@
-# Linaria plugin for astroturf
+# astroturf plugin for Gatsby
 
 This plugin modifies Gatsby's webpack configuration to support [astroturf][].
 
