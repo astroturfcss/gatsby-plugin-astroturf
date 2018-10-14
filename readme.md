@@ -34,7 +34,7 @@ Changing `extension` isn't possible, gatsby-plugin-astroturf hardcodes it to `.m
 
 ## PostCSS plugins
 
-For astroturf to work properly you need to add nesting support. For that you can use [postcss-nested][] or another plugin which contains this feature, like [precss][]. You can install these plugins an [many more][PostCSS plugins] using [gatsby-plugin-postcss][]:
+For astroturf to work properly you need to add nesting support. For that you can use [postcss-nested][] or another plugin which contains this feature, like [precss][]. You can install these plugins and [many more][PostCSS plugins] using [gatsby-plugin-postcss][]:
 
 ```
 yarn add gatsby-plugin-postcss
