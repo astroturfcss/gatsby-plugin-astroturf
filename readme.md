@@ -22,15 +22,15 @@ You can also pass [options][] to astroturf's webpack loader:
 plugins: [
   {
     resolve: 'gatsby-plugin-astroturf',
+    // defaults:
     options: {
       tagName: 'css',
       styledTag: 'styled',
+      extension: '\.module\.css',
     },
   },
 ]
 ```
-
-Changing `extension` isn't possible, gatsby-plugin-astroturf hardcodes it to `.module.css` in order to match Gatsby's CSS Modules webpack rule.
 
 ## PostCSS plugins
 
@@ -41,7 +41,6 @@ yarn add gatsby-plugin-postcss
 ```
 ```js
 plugins: [
-  // the order of these plugins isn't important
   'gatsby-plugin-postcss',
   'gatsby-plugin-astroturf',
 ]
@@ -60,6 +59,27 @@ module.exports =  {
   }
 }
 ```
+
+## Sass, Less etc.
+
+If you'd like to use Sass, Less or some other preprocessor instead of (or in addition to) PostCSS, make sure that you adjust the `extension` option and install the appropriate Gatsby plugin. For example, this is all you need to add support for Sass:
+
+```
+yarn add gatsby-plugin-sass
+```
+```js
+plugins: [
+  'gatsby-plugin-sass',
+  {
+    resolve: 'gatsby-plugin-astroturf',
+    options: {
+      extension: '\.module\.scss',
+    },
+  },
+]
+```
+
+Just make sure that your Gatsby plugin supports CSS Modules. Also, note that Sass already has support for nesting, so you don't need postcss-nested.
 
 Happy styling! :art:
 
