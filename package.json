@@ -10,41 +10,8 @@
     "gatsby-plugin",
     "astroturf"
   ],
-  "scripts": {
-    "test": "jest"
-  },
-  "browserslist": [
-    "node 6"
-  ],
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint",
-      "jest --findRelatedTests"
-    ]
-  },
   "peerDependencies": {
     "astroturf": "*",
-    "gatsby": ">=2",
-    "gatsby-plugin-postcss": ">=2"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "eslint": "^5.6.1",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "husky": "^1.1.2",
-    "jest": "^23.6.0",
-    "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3"
+    "gatsby": ">=2"
   }
 }
