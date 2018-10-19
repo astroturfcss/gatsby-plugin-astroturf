@@ -26,7 +26,7 @@ plugins: [
     options: {
       tagName: 'css',
       styledTag: 'styled',
-      extension: '\.module\.css',
+      extension: '.module.css',
     },
   },
 ]
@@ -73,7 +73,7 @@ plugins: [
   {
     resolve: 'gatsby-plugin-astroturf',
     options: {
-      extension: '\.module\.scss',
+      extension: '.module.scss',
     },
   },
 ]
