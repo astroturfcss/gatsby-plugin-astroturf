@@ -3,7 +3,7 @@ const EXTENSION = '.module.css'
 
 
 exports.onCreateWebpackConfig = (
-  { actions, getConfig, rules },
+  { actions },
   pluginOptions
 ) => {
   actions.setWebpackConfig({
