@@ -10,7 +10,7 @@ exports.onCreateWebpackConfig = (
     module: {
       rules: [
         {
-          test: /\.jsx?$/,
+          test: /\.(j|t)sx?$/,
           use: [
             {
               loader: 'astroturf/loader',
