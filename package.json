@@ -2,13 +2,28 @@
   "name": "gatsby-plugin-astroturf",
   "description": "Gatsby plugin for styling with astroturf",
   "version": "0.2.1",
-  "author": "Matija Marohnić <matija.marohnic@gmail.com>",
   "license": "MIT",
+  "author": {
+    "name": "Matija Marohnić",
+    "email": "matija.marohnic@gmail.com",
+    "url": "https://silvenon.com"
+  },
+  "homepage": "https://github.com/silvenon/gatsby-plugin-astroturf#readme",
+  "bugs": {
+    "url": "https://github.com/silvenon/gatsby-plugin-astroturf/issues",
+    "email": "matija.marohnic@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silvenon/gatsby-plugin-astroturf.git"
+  },
   "main": "index.js",
   "keywords": [
     "gatsby",
     "gatsby-plugin",
-    "astroturf"
+    "astroturf",
+    "css",
+    "css-in-js"
   ],
   "peerDependencies": {
     "astroturf": "*",
